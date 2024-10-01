@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/links/style-Arrangement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navigation-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navigation-logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+        }
+
+        .nav-text {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            margin-top: 10px; /* Adjusted for spacing */
+            text-align: center;
+        }
+
+        ul.navigation {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.navigation li {
+            margin-left: 20px;
+        }
+
+        ul.navigation li a {
+            font-size: 15px;
+            text-decoration: none;
+            background-color: whitesmoke;
+            color: black;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid black;
+            display: block;
+        }
+
+        ul.navigation li a:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Grid layout for room items */
+        .w3-row-padding {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .w3-third {
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+        }
+
+        .w3-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Form styles */
+        .form-style-6 {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-style-6 input,
+        .form-style-6 textarea {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .form-style-6 input:hover,
+        .form-style-6 textarea:hover {
+            border: 2px solid rgb(51, 151, 209);
+        }
+
+        .form-style-6 button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-style-6 button:hover {
+            background-color: #ccc;
+            border: 1px solid black;
+            color: black;
+        }
+
+        /* Layout adjustments */
+        .w3-row-padding {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        #map {
+            height: 500px;
+            width: 60%;
+            margin-right: 20px;
+        }
+
+        .form-style-6 {
+            width: 35%;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1024px) {
+            .w3-row-padding {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #map {
+                width: 100%;
+                margin-right: 0;
+            }
+
+            .form-style-6 {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navigation-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            ul.navigation {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navigation-container.active ul.navigation {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+                font-size: 30px;
+                color: white;
+                cursor: pointer;
+            }
+
+            .navigation-logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .nav-text {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- HEADER LOGO BEGINNING -->
+            <div class="navigation-container">
+                <div class="logo-container">
+                    <img class="navigation-logo" src="https://th.bing.com/th?id=OLC.QBBzz/J+VRD4kA480x360&rs=1&pid=ImgDetMain" alt="">
+                    <div class="nav-text">Andra Mahasabha</div>
+                </div>
+                <ul class="navigation">
+                    <li><a class="bs" href="index.html">HOME</a></li>
+                    <li><a class="bs" href="room.html">ROOMS AND SUITES</a></li>
+
+                    <li><a class="bs" href="contact.html">CONTACT US</a></li>
+                    <li><a class="bs" href="about.html">ABOUT</a></li>
+                    <li><a class="bs" href="booknow.html">BOOK ONLINE</a></li>
+                </ul>
+            </div>
+            <br>
+        </header>
+        <!-- HEADER LOGO END -->
+
+        <article class="main">
+            <div class="w3-content" style="max-width:1532px; padding: 15px 15px 15px 15px; margin-top: 20px;">
+                <br>
+
+                <!-- ABOUT US & LOCATION-->
+                <div class="w3-row-padding" id="about" style="box-shadow: 0 0 15px #000000; margin-top: 30px; padding: 0px 20px 30px 40px;">
+                    <div>
+                        <p style="color: #000000; font-size: 27pt; text-align: center; margin-top: 25px">Andra Mahasabha</p>
+                    </div>
+
+                    <div style="display: flex; width: 100%; align-items: flex-start;">
+                        <!-- MAP BEGINNING -->
+                        <div id="map"></div>
+                        <!-- MAP END -->
+                        <div class="form-style-6">
+                            <h1>Contact Us</h1>
+                            <div style="font-size: 13pt">
+                                <form method="post" onsubmit="return validateForm();">
+                                    <input type="text" name="field1" required id="name" placeholder="Your Name">
+                                    <input type="email" name="field2" required id="email" placeholder="Email Address">
+                                    <textarea name="field3" id="message" required placeholder="Type your Message"></textarea>
+                                    <button type="submit" value="Send">Send</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page content -->
+            </div>
+            <br><br><br>
+        </article>
+
+        <!-- LEFT BEGINNING -->
+        <aside class="aside aside-1" style="color: #FFFFFF">.</aside>
+        <!-- LEFT END -->
+
+        <!-- LEFT BEGINNING -->
+        <aside class="aside aside-2" style="color: #FFFFFF">.</aside>
+        <!-- LEFT END -->
+
+        <!-- FOOTER BEGINNING -->
+        <footer class="footer">
+            <!-- FOOTER CENTER -->
+            <div class="footer_center">
+                <div class="text">
+                    <p>CONTACT INFORMATION</p>
+                    <a name="contact"></a>
+                    <p style="margin-top: 0; padding-top: 5px;"><i></i>Plot No 10C, Dadar, Mumbai, Maharashtra 400014, Mumbai</p>
+                    <p><i class="phone"></i> <a href="tel:+381623340023">+91 9967829399</a></p>
+                    <p><i class="mail"></i> <a href="mailto:office@davidhotel.com">office@Andramasabha.com</a></p>
+                    <p>@2024 Andramasabha HOTEL</p>
+                </div>
+            </div>
+            <!-- END / FOOTER CENTER -->
+        </footer>
+        <!-- FOOTER END -->
+    </div>
+
+    <!-- MAP FOR THE LOCATION BEGINNING-->
+    <script>
+        function myMap() {
+            const mapCanvas = document.getElementById("map");
+            const myCenter = new google.maps.LatLng(19.021906,72.847438);
+            const mapOptions = { center: myCenter, zoom: 17 };
+            const map = new google.maps.Map(mapCanvas, mapOptions);
+            const marker = new google.maps.Marker({
+                position: myCenter,
+                animation: google.maps.Animation.BOUNCE
+            });
+            marker.setMap(map);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwKgLSdSZEVdxRKKlImZu9GR77Gc_T9HQ&callback=myMap" async defer></script>
+</body>
+</html>
+

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+    <style>
+        #mahasabhaIdField,
+        #mahasabhaPhoneNoField {
+            display: none;
+            /* Hidden by default */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Book a Room</h1>
+
+    <form id="bookingForm">
+
+        <label for="email">First Name:</label>
+        <input type="text" id="firstName" placeholder="First Name" required><br>
+
+        <label for="email">Last Name:</label>
+        <input type="text" id="lastName" placeholder="Last Name"><br>
+
+        <label for="email">Email Address:</label>
+        <input type="text" id="email" placeholder="Enter email address">
+        <button id="sendEmailBtn" type="button">Send OTP via Email</button><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phoneNo" placeholder="Enter phone number" required>
+        <button id="sendSmsBtn" type="button">Send OTP via SMS</button><br>
+
+        <label for="email">Room Type:</label>
+        <input type="text" id="roomType" placeholder="Room Type" required><br>
+
+        <label for="email">Number of Guests:</label>
+        <input type="number" id="guests" placeholder="Number of Guests" required><br>
+        <div style="display: flex;">
+            <h2 style="margin: 0;">Timing:</h2>
+            <input style="margin: 4px;" type="datetime-local" id="arrivalDate" placeholder="Arrival Date" required><br>
+            <input style="margin: 4px;" type="datetime-local" id="departureDate" placeholder="Departure Date"
+                required><br>
+        </div>
+        <label>
+            <input type="checkbox" id="isAndraMahasabhaMember"> Are you an Andra Mahasabha Member?
+        </label><br>
+
+        <div id="mahasabhaIdField">
+            <input type="text" id="mahasabhaId" placeholder="Andra Mahasabha ID (Optional)"><br>
+        </div>
+        <div id="mahasabhaPhoneNoField">
+            <input type="text" id="mahasabhaPhoneNo" placeholder="Andra Mahasabha Phone No (Optional)"><br>
+        </div>
+
+        <textarea id="specialRequest" placeholder="Any special requests?"></textarea><br>
+        <button type="submit">Submit Booking</button>
+    </form>
+
+    <script>
+        const checkbox = document.getElementById('isAndraMahasabhaMember');
+        const mahasabhaIdField = document.getElementById('mahasabhaIdField');
+        const mahasabhaPhoneNoField = document.getElementById('mahasabhaPhoneNoField');
+
+        checkbox.addEventListener('change', function () {
+            if (this.checked) {
+                mahasabhaIdField.style.display = 'block';
+                mahasabhaPhoneNoField.style.display = 'block';
+            } else {
+                mahasabhaIdField.style.display = 'none';
+                mahasabhaPhoneNoField.style.display = 'none';
+            }
+        });
+
+        document.getElementById('sendSmsBtn').addEventListener('click', async (event) => {
+            event.preventDefault();
+            const phoneNumber = document.getElementById('phoneNo').value;
+            if (!phoneNumber) {
+                alert('Please enter a phone number.');
+                return;
+            }
+            const response = await fetch('http://localhost:3003/send-sms', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ phoneNumber })
+            });
+            const data = await response.json();
+            console.log(data);
+        });
+
+        document.getElementById('sendEmailBtn').addEventListener('click', async (event) => {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            if (!email) {
+                alert('Please enter an email address.');
+                return;
+            }
+            const response = await fetch('http://localhost:3001/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+            const data = await response.json();
+            console.log(data);
+        });
+
+        document.getElementById('bookingForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const bookingData = {
+                FirstName: document.getElementById('firstName').value,
+                LastName: document.getElementById('lastName').value,
+                Email: document.getElementById('email').value,
+                PhoneNo: document.getElementById('phoneNo').value,
+                RoomType: document.getElementById('roomType').value,
+                NumberOfGuests: document.getElementById('guests').value,
+                ArrivalDateTime: document.getElementById('arrivalDate').value,
+                DepartureDateTime: document.getElementById('departureDate').value,
+                IsAndraMahasabhaMember: checkbox.checked,
+                AndraMahasabhaID: document.getElementById('mahasabhaId').value || null,
+                AndraMahasabhaPhoneNo: document.getElementById('mahasabhaPhoneNo').value || null,
+                SpecialRequest: document.getElementById('specialRequest').value
+            };
+
+            console.log(JSON.stringify(bookingData));  // Correct logging
+
+            fetch(`http://localhost:3000/api/add-user`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(bookingData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Booking added successfully! Booking ID: ' + data.bookingId);
+                })
+                .catch(error => {
+                    alert('Error adding booking');
+                    console.error(error);
+                });
+        });
+    </script>
+
+</body>
+
+</html>

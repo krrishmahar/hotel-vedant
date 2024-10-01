@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Booking</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- DATE PICKER -->
+    <link href="css/datepicker_css/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="css/datepicker_css/datepicker.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="javascript/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="javascript/jquery-ui-1.8.18.custom.min.js"></script>
+    <!-- DATE PICKER END-->
+
+    <!-- PAGE STYLE AND GOOGLE API FONT, GOOGLES MAP-->
+    <link rel="stylesheet" href="css/links/style-Arrangement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- HEADER LOGO BEGINNING -->
+        <header class="header">
+
+            <a name="home"></a>
+            <div class="navigation-container">
+                <div class="logo-container">
+                    <img class="navigation-logo" src="https://th.bing.com/th?id=OLC.QBBzz/J+VRD4kA480x360&rs=1&pid=ImgDetMain" alt="">
+                    <div class="nav-text">Andra Mahasabha</div>
+                </div>
+                <ul class="navigation">
+                    <li><a  href="#home">HOME</a></li>
+                    <li><a  href="html/room.html">ROOMS AND SUITES</a></li>
+                    <li><a  href="html/contact.html">CONTACT US</a></li>
+                    <li><a  href="html/about.html">ABOUT</a></li>
+                    <li><a  href="html/booknow.html">BOOK ONLINE</a></li>
+                </ul>
+            </div>
+            <!------------------------------------------------------------------DONE------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+            
+            <div class="w3-col m3" >
+              <label style="color: #ffffff"><i class="fa fa-calendar-o"></i> Check In</label>
+              <input class="w3-input w3-border" id="datecheckin" type="text" min="0" max="16" placeholder="mm/dd/yyyy" style="color: #000000"/>
+            </div>
+            <div class="w3-col m3">
+              <label style="color: #ffffff"><i class="fa fa-calendar-o"></i> Check Out</label>
+              <input class="w3-input w3-border" id="datecheckout" min="0" max="16" placeholder="mm/dd/yyyy" style="color: #000000"/>
+            </div>
+            <script>
+              $(function() {
+                $("#datecheckin").datepicker();
+                $("#datecheckout").datepicker();
+              });
+            </script>
+            <div class="w3-col m2">
+                <label style="color: #ffffff"><i class="fa fa-male"></i> Guest</label>
+                <input class="w3-input w3-border" type="number" min="0" max="16" placeholder="1" style="color: #000000">
+            </div>
+            <div class="w3-col m2">
+                <label style="color: #ffffff"><i class="Room"></i> No of Rooms</label>
+                <input class="w3-input w3-border" type="number" min="0" max="10" placeholder="1" style="color: #000000">
+            </div>
+            <div class="w3-col m2">
+                <label style="color: #ffffff"><i class="fa fa-search"></i> Search</label>
+                <button class="w3-button w3-block w3-black">Search</button>
+            </div>
+        </div>
+        <br> 
+        <br>
+        <br>
+        <!------------------------------------------------------------------DONE------------------------------------------------------------------------------------------------------------------------------------------------------------> 
+
+            <!-- AUTOMATIC SLIDESHOW START -->
+
+            <div class="slideshow-container" style="background-color: #303030;">
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/slavija1_files/Room1.jpg" style="width:80.9%; height: 700px">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/slavija1_files/Room2.jpg" style="width:80.9%; height: 700px">
+                </div>
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/slavija1_files/room3.jpg" style="width:80.9%; height: 700px">
+                </div>
+
+
+                <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src="img/slavija1_files/room4.jpg" style="width:80.9%; height: 700px">
+                </div>
+
+            </div>
+            <div style="text-align:center">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <!-- AUTOMATIC SLIDESHOW END -->
+
+        </header>
+        <!-- HEADER LOGO END -->
+
+
+
+        <!-- FOOTER BEGINNING -->
+        <footer class="footer">
+
+
+            <!-- FOOTER CENTER -->
+            <div class="footer_center">
+                <div class="text">
+                    <p>CONTACT INFORMATION</p>
+                    <a name="contact"></a>
+                    <p style="margin-top: 0; padding-top: 5px;"><i></i>Plot No 10C,Dadar, Mumbai, Maharashtra 400014, Mumbai</p>
+                    <p><i class="phone"></i> <a href="tel:+381623340023">+91 9967829399</a></p>
+                    <p><i class="mail"></i> <a href="mailto:office@davidhotel.com">office@Andramasabha.com</a></p>
+                    <p>@2024 Andramasabha HOTEL</p>
+                </div>
+            </div>
+            <!-- END / FOOTER CENTER -->
+
+        </footer>
+        <!-- FOOTER END -->
+
+    </div>
+
+    <!-- DATE PICKER FOR MAP -->
+
+    <script type="text/javascript">
+        $(function(){
+            $('#datecheckin').datepicker({
+                inline: true,
+                //nextText: '&rarr;',
+                //prevText: '&larr;',
+                showOtherMonths: true,
+                //dateFormat: 'dd MM yy',
+                dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                //showOn: "button",
+                //buttonImage: "img/calendar-blue.png",
+                //buttonImageOnly: true,
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('#datecheckout').datepicker({
+                inline: true,
+                //nextText: '&rarr;',
+                //prevText: '&larr;',
+                showOtherMonths: true,
+                //dateFormat: 'dd MM yy',
+                dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                //showOn: "button",
+                //buttonImage: "img/calendar-blue.png",
+                //buttonImageOnly: true,
+            });
+        });
+    </script>
+
+    <!-- END OF DATE PICKER FOR MAP -->
+
+    <!-- MAP FOR THE LOCATION BEGINNING-->
+    <script>
+        function myMap() {
+            const mapCanvas = document.getElementById("map");
+            const myCenter = new google.maps.LatLng(44.801829, 20.466637);
+            const mapOptions = {center: myCenter, zoom: 15};
+            const map = new google.maps.Map(mapCanvas, mapOptions);
+            const marker = new google.maps.Marker({
+                position: myCenter,
+                animation: google.maps.Animation.BOUNCE
+            });
+            marker.setMap(map);
+        }
+    </script>
+
+    <script src="javascript/googleMap.js"></script>
+    <!-- MAP FOR THE LOCATION END-->
+
+    <!-- AUTOMATIC SLIDESHOW START -->
+    <script>
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+    </script>
+    <!-- AUTOMATIC SLIDESHOW END -->
+</body>
+</html>
